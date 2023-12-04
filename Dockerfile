@@ -1,5 +1,8 @@
 FROM ubuntu:20.04
 
+ENV TZ=Asia/Kolkata \
+    DEBIAN_FRONTEND=noninteractive
+
 ENV ANDROID_SDK_ROOT=/usr/lib/android-sdk/
 
 RUN mkdir /home/miab
@@ -11,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y && \
     git dos2unix p7zip lz4 \
     apt-utils apt-transport-https ca-certificates gnupg \
     python3 \
-    android-sdk default-jre default-jdk \
+    android-sdk openjdk-17-jdk \
     cargo curl \
     wget unzip g++
 
